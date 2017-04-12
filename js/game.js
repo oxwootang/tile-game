@@ -1,7 +1,7 @@
 //initialize game board
 var Game = function(count){
   this.gameBoard = init(count);
-  this.solution = this.gameBoard;
+  this.solution = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]];
 
   function init(count) {
     var grid = [];
@@ -165,7 +165,16 @@ Game.prototype.shuffle = function(){
   }
 };
 
+Game.prototype.complete = function(){
+  console.log(this.gameBoard);
+  console.log(this.solution);
+  console.log("yay!");
+}
 
+Game.prototype.testComplete = function(){
+  this.move("down");
+  this.move("down");
+}
 
 
 var game = new Game(4);
