@@ -71,6 +71,12 @@ Game.prototype.move = function(direction){
           else if(direction==="down" && i-1>0){
             console.log("valid");
           }
+          else if(direction==="right" && j-1>0){
+            console.log("valid");
+          }
+          else if(direction==="left" && j+1<grid.length){
+            console.log("valid");
+          }
           else{
             console.log("invalid!");
           }

@@ -12,9 +12,11 @@ $(document).ready(function() {
 
   Mousetrap.bind("right", function() {
     console.log("right");
+    game.move("right");
   })
 
   Mousetrap.bind("left", function() {
     console.log("left");
+    game.move("left");
   })
 });
