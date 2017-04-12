@@ -30,4 +30,23 @@ var Game = function(count){
   }
 }
 
+// display 2d array on table in html
+Game.prototype.display = function() {
+  // initialize html
+  $(".gameBoard").html("");
+
+
+  $(".gameBoard").append('<tbody></tbody>');
+
+  for (var i = 0; i < this.gameBoard.length; i ++){
+    $(".gameBoard tbody").append("<tr class='row" + i + "'></tr>");
+
+    for (var j = 0; j < this.gameBoard[i].length; j ++){
+      $(".row" + i).append("<td>" + this.gameBoard[i][j] + "</td>");
+    }
+
+  }
+}
+
 var game = new Game(4);
+game.display();
