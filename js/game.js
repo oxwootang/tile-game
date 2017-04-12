@@ -48,5 +48,46 @@ Game.prototype.display = function() {
   }
 }
 
+//takes in a direction as a string
+Game.prototype.move = function(direction){
+
+  var direction = direction;
+
+  //get gameBoard
+  var grid = this.gameBoard;
+  console.log(grid);
+
+  //find empty tile #16
+  //check that the tile in opposite direction of direction-string is a valid game tile
+  //i.e. "left" direction when #16 is in the bottom-right corner of the grid would be an impossible move because there should be no tile to move "left" to the empty tile
+  var checkDirection = function(){
+    for(var i=0; i<4; i++){
+      for(var j=0; j<4; j++){
+        console.log(grid[i][j]);
+        if(grid[i][j]===16){
+          if(direction==="up" && i+1<grid.length){
+            console.log("valid!");
+          }
+          else if(direction==="down" && i-1>0){
+            console.log("valid");
+          }
+          else if(direction==="right" && j-1>0){
+            console.log("valid");
+          }
+          else if(direction==="left" && j+1<grid.length){
+            console.log("valid");
+          }
+          else{
+            console.log("invalid!");
+          }
+        }
+      }
+    }
+    // console.log(this.gameBoard.indexOf)
+  };
+  checkDirection();
+
+};
+
 var game = new Game(4);
 game.display();
