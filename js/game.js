@@ -1,6 +1,7 @@
 //initialize game board
 var Game = function(count){
   this.gameBoard = init(count);
+  this.solution = this.gameBoard;
 
   function init(count) {
     var grid = [];
@@ -129,6 +130,43 @@ Game.prototype.move = function(direction){
   };
   this.display();
 };
+
+//shuffle the gameboard to start the game
+//shuffle algorithm
+Game.prototype.shuffle = function(){
+  var grid = this.gameBoard;
+  var moveCount = 0;
+  var directions = ["up", "down", "left", "rght"];
+
+  while(moveCount < 150){
+    moveCount++;
+    var first = directions[Math.floor(Math.random()*directions.length)];
+    this.move(first);
+    var horizontal = ["left", "right"];
+    var vertical = ["up", "down"];
+    var second;
+    var third;
+    var randMove;
+    if(first==="up" || first==="down"){
+      second = horizontal[Math.floor(Math.random()*horizontal.length)];
+      third = vertical[Math.floor(Math.random()*vertical.length)];
+      randMove = [second, third];
+
+    }
+    else{
+      second = vertical[Math.floor(Math.random()*vertical.length)];
+      third = horizontal[Math.floor(Math.random()*horizontal.length)];
+      randMove = [second, third];
+    }
+    this.move(randMove[Math.floor(Math.random()*randMove.length)]);
+    moveCount++;
+    this.move(randMove[Math.floor(Math.random()*randMove.length)]);
+    moveCount++;
+  }
+};
+
+
+
 
 var game = new Game(4);
 game.display();
