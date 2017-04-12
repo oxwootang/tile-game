@@ -23,5 +23,7 @@ $(document).ready(function() {
       console.log("left");
       game.move("left");
     });
+
+    game.shuffle();
   });
 });
