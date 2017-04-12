@@ -57,6 +57,11 @@ Game.prototype.move = function(direction){
   var grid = this.gameBoard;
   console.log(grid);
 
+  //index of tile that is moving towards emptyTile - to be assigned after valid directional check below
+  var val;
+  var iIndex;
+  var jIndex;
+
   //find empty tile #16
   //check that the tile in opposite direction of direction-string is a valid game tile
   //i.e. "left" direction when #16 is in the bottom-right corner of the grid would be an impossible move because there should be no tile to move "left" to the empty tile
@@ -67,15 +72,31 @@ Game.prototype.move = function(direction){
         if(grid[i][j]===16){
           if(direction==="up" && i+1<grid.length){
             console.log("valid!");
+            iIndex = i;
+            jIndex = j;
+            val = grid[i+1][j]
+            return "valid";
           }
           else if(direction==="down" && i-1>0){
             console.log("valid");
+            iIndex = i;
+            jIndex = j;
+            val = grid[i-1][j];
+            return "valid";
           }
           else if(direction==="right" && j-1>0){
             console.log("valid");
+            iIndex = i;
+            jIndex = j;
+            val = grid[i][j-1];
+            return "valid";
           }
           else if(direction==="left" && j+1<grid.length){
             console.log("valid");
+            iIndex = i;
+            jIndex = j;
+            val = grid[i][j+1];
+            return "valid";
           }
           else{
             console.log("invalid!");
@@ -85,8 +106,28 @@ Game.prototype.move = function(direction){
     }
     // console.log(this.gameBoard.indexOf)
   };
-  checkDirection();
-
+  if(checkDirection()==="valid"){
+    switch(direction){
+      case "up":
+        grid[iIndex][jIndex] = val;
+        grid[iIndex+1][jIndex] = 16;
+        break;
+      case "down":
+        grid[iIndex][jIndex] = val;
+        grid[iIndex-1][jIndex] = 16;
+        break;
+      case "left":
+        grid[iIndex][jIndex] = val;
+        grid[iIndex][jIndex+1] = 16;
+        break;
+      case "right":
+        grid[iIndex][jIndex] = val;
+        grid[iIndex][jIndex-1] = 16;
+        break;
+    }
+    this.gameBoard = grid;
+  };
+  this.display();
 };
 
 var game = new Game(4);
