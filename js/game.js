@@ -77,14 +77,14 @@ Game.prototype.move = function(direction){
             val = grid[i+1][j]
             return "valid";
           }
-          else if(direction==="down" && i-1>0){
+          else if(direction==="down" && i-1>=0){
             console.log("valid");
             iIndex = i;
             jIndex = j;
             val = grid[i-1][j];
             return "valid";
           }
-          else if(direction==="right" && j-1>0){
+          else if(direction==="right" && j-1>=0){
             console.log("valid");
             iIndex = i;
             jIndex = j;
