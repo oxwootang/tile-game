@@ -188,6 +188,7 @@ Game.prototype.complete = function(board, solution){
   // console.log("yay!");
 }
 
+//a Game method just to test a simple puzzle's completion function
 Game.prototype.testComplete = function(){
   this.move("down");
   this.move("down");
