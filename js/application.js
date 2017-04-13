@@ -7,25 +7,25 @@ $(document).ready(function() {
     Mousetrap.bind("up", function() {
       console.log("up");
       game.move("up");
-      game.complete();
+      game.complete(game.gameBoard, game.solution);
     });
 
     Mousetrap.bind("down", function() {
       console.log("down");
       game.move("down");
-      game.complete();
+      game.complete(game.gameBoard, game.solution);
     });
 
     Mousetrap.bind("right", function() {
       console.log("right");
       game.move("right");
-      game.complete();
+      game.complete(game.gameBoard, game.solution);
     });
 
     Mousetrap.bind("left", function() {
       console.log("left");
       game.move("left");
-      game.complete();
+      game.complete(game.gameBoard, game.solution);
     });
 
     game.testComplete();

@@ -165,10 +165,27 @@ Game.prototype.shuffle = function(){
   }
 };
 
-Game.prototype.complete = function(){
-  console.log(this.gameBoard);
-  console.log(this.solution);
-  console.log("yay!");
+Game.prototype.complete = function(board, solution){
+  // console.log(this.gameBoard);
+  // console.log(this.solution);
+  // console.log(board);
+  // console.log(solution);
+  var done = true;
+  for(var i=0; i<4; i++){
+    for(var j=0; j<4; j++){
+      if(board[i][j]!==solution[i][j]){
+        done = false;
+      }
+    }
+  }
+  if(done===true){
+    console.log("~Congrats!~");
+    alert("~Congrats! You finished!~");
+  }
+  // if(board === solution){
+  //   console.log("DONE!");
+  // }
+  // console.log("yay!");
 }
 
 Game.prototype.testComplete = function(){
