@@ -1,7 +1,7 @@
 //initialize game board
 var Game = function(count){
   this.gameBoard = init(count);
-  this.solution = this.gameBoard;
+  this.solution = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]];
 
   function init(count) {
     var grid = [];
@@ -165,7 +165,34 @@ Game.prototype.shuffle = function(){
   }
 };
 
+Game.prototype.complete = function(board, solution){
+  // console.log(this.gameBoard);
+  // console.log(this.solution);
+  // console.log(board);
+  // console.log(solution);
+  var done = true;
+  for(var i=0; i<4; i++){
+    for(var j=0; j<4; j++){
+      if(board[i][j]!==solution[i][j]){
+        done = false;
+      }
+    }
+  }
+  if(done===true){
+    console.log("~Congrats!~");
+    alert("~Congrats! You finished!~");
+  }
+  // if(board === solution){
+  //   console.log("DONE!");
+  // }
+  // console.log("yay!");
+}
 
+//a Game method just to test a simple puzzle's completion function
+Game.prototype.testComplete = function(){
+  this.move("down");
+  this.move("down");
+}
 
 
 var game = new Game(4);
