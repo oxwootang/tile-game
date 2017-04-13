@@ -43,9 +43,13 @@ Game.prototype.display = function() {
     $(".gameBoard tbody").append("<tr class='row" + i + "'></tr>");
 
     for (var j = 0; j < this.gameBoard[i].length; j ++){
-      $(".row" + i).append("<td>"+ this.gameBoard[i][j] + "</td>");
+      if(this.gameBoard[i][j]===16){
+        $(".row" + i).append("<td>"+ '<img src="img/Numbers/Blank.png">' + "</td>");
+      }
+      else{
+        $(".row" + i).append("<td>"+ '<img src="img/Numbers/'+this.gameBoard[i][j]+'.png">' + "</td>");
+      }
     }
-
   }
 }
 
@@ -145,8 +149,8 @@ Game.prototype.move = function(direction){
     }
     this.gameBoard = grid;
   };
-  // this.display();
-  this.displayImgs();
+  this.display();
+  // this.displayImgs();
 };
 
 //shuffle the gameboard to start the game
