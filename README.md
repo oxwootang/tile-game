@@ -8,7 +8,9 @@ How to Play
 -----------
 * Clone or download the repo: git clone https://github.com/oxwootang/tile-game.git
 * Open index.html file in your browser (make sure to enable JavaScript)
-* Press Play and Enjoy!
+* Click the Play button
+* Press in the direction that you wish to move towards the empty tile
+* AKA - pressing "UP" means that you want the tile below the blank tile to move up and switch places with the blank tile.
 
 
 
