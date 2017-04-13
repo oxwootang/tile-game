@@ -43,11 +43,28 @@ Game.prototype.display = function() {
     $(".gameBoard tbody").append("<tr class='row" + i + "'></tr>");
 
     for (var j = 0; j < this.gameBoard[i].length; j ++){
-      $(".row" + i).append("<td>" + this.gameBoard[i][j] + "</td>");
+      $(".row" + i).append("<td>"+ this.gameBoard[i][j] + "</td>");
     }
 
   }
 }
+
+//display gameboard with tiled images
+Game.prototype.displayImgs = function(){
+  //initialize html
+  $(".gameBoard").html("");
+  $(".gameBoard").append('<tbody></tbody>');
+
+  //add rows to gameBoard table body
+  for (var i = 0; i < this.gameBoard.length; i ++){
+    $(".gameBoard tbody").append("<tr class='row" + i + "'></tr>");
+
+    //populate rows with gameboard elements
+    for (var j = 0; j < this.gameBoard[i].length; j ++){
+      $(".row" + i).append("<td> "+ '<img src="img/OnePieceCrew/'+this.gameBoard[i][j]+'.jpeg">' + "</td>");
+    }
+  }
+};
 
 //takes in a direction as a string
 Game.prototype.move = function(direction){
@@ -128,7 +145,8 @@ Game.prototype.move = function(direction){
     }
     this.gameBoard = grid;
   };
-  this.display();
+  // this.display();
+  this.displayImgs();
 };
 
 //shuffle the gameboard to start the game

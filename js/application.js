@@ -28,7 +28,7 @@ $(document).ready(function() {
       game.complete(game.gameBoard, game.solution);
     });
 
-    // game.testComplete();
-    game.shuffle();
+    game.testComplete();
+    // game.shuffle();
   });
 });
