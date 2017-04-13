@@ -12,7 +12,7 @@ How to Play:
 
 
 
-<br>
-Stack<br>
------- <br>
+
+Stack
+------
 HTML, CSS, Vanilla JS, jQuery, MousetrapJS
