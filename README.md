@@ -18,6 +18,7 @@ Upcoming
 ---------
 * Deploy Tizzler
 * Add feature to 'tilify' a picture so that Tizzler can expand with a new game mode
+* Stretch Goals: add move counter; add user model to keep track of best move record and maybe last game; add share functionality to share on social media
 
 
 
