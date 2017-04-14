@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("button").on("click", function(e){
+  $(".play").on("click", function(e){
     e.preventDefault();
     console.log("Clicked play!");
 
@@ -29,6 +29,15 @@ $(document).ready(function() {
     });
 
     // game.testComplete();
+    var classList = this.className.split(' ');
+    if(classList.includes("one-piece")){
+      game.mode = "one-piece";
+      game.displayImgs();
+    }
+    else {
+      game.mode = "numbers";
+    }
+    alert("Game Ready!");
     game.shuffle();
   });
 });
