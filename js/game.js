@@ -2,6 +2,7 @@
 var Game = function(count){
   this.gameBoard = init(count);
   this.solution = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]];
+  this.mode = "numbers";
 
   function init(count) {
     var grid = [];
@@ -63,9 +64,26 @@ Game.prototype.displayImgs = function(){
   for (var i = 0; i < this.gameBoard.length; i ++){
     $(".gameBoard tbody").append("<tr class='row" + i + "'></tr>");
 
+    if(this.mode==="one-piece"){
     //populate rows with gameboard elements
-    for (var j = 0; j < this.gameBoard[i].length; j ++){
-      $(".row" + i).append("<td> "+ '<img src="img/OnePieceCrew/'+this.gameBoard[i][j]+'.jpeg">' + "</td>");
+      for (var j = 0; j < this.gameBoard[i].length; j ++){
+        if(this.gameBoard[i][j]===16){
+          $(".row"+i).append("<td>"+'<img src="img/OnePieceCrew/BLANK.jpeg">'+"</td>");
+        }
+        else {
+          $(".row" + i).append("<td> "+ '<img src="img/OnePieceCrew/'+this.gameBoard[i][j]+'.jpeg">' + "</td>");
+        }
+      }
+    }
+    else {
+      for (var j = 0; j < this.gameBoard[i].length; j ++){
+        if(this.gameBoard[i][j]===16){
+          $(".row" + i).append("<td>"+ '<img src="img/Numbers/Blank.png">' + "</td>");
+        }
+        else{
+          $(".row" + i).append("<td>"+ '<img src="img/Numbers/'+this.gameBoard[i][j]+'.png">' + "</td>");
+        }
+      }
     }
   }
 };
@@ -149,8 +167,8 @@ Game.prototype.move = function(direction){
     }
     this.gameBoard = grid;
   };
-  this.display();
-  // this.displayImgs();
+  // this.display();
+  this.displayImgs();
 };
 
 //shuffle the gameboard to start the game
@@ -218,4 +236,4 @@ Game.prototype.testComplete = function(){
 
 
 var game = new Game(4);
-game.display();
+game.displayImgs();
