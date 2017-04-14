@@ -1,4 +1,4 @@
-# TIZZLER
+# TIZZLE
 A JavaScript tile-puzzle game. Check back for updates!<br>
 <br>
 ## Now Available!<br>
