@@ -22,10 +22,7 @@ If you would like to submit a picture to be a puzzle, please upload your photo t
 * Rename the folder to be simple with no special charactes or spaces
 * Rename the 16 image files in the folder in the following manner:
 * 0-0 = 1, 0-1 = 2, 0-2 = 3, 0-3 = 4, 1-0 = 5, ... , 3-2 = 15, 3-3 = 16.png (or whatever file extension)
-* Submit the folder in an e-mail to: <br>
-    <a href="mailto:woojaeyi93@gmail.com">woojaeyi93@gmail.com</a><br> with Subject Headline: "TIZZLE NEW PUZZLE" and they will be subject to review and approval
-
-    Or you can clone my repo off of GitHub: <br>
+* Clone my repo off of GitHub: <br>
     <a href="https://github.com/oxwootang">Woojae's GitHub</a><br>
     and make a pull request after adding your photo folder in its appropriate format in the img folder
 
